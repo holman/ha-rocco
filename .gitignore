@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.DS_Store
+
+# Captures contain long-lived login tokens. Never commit them.
+*.har
+*.proxymanlog*

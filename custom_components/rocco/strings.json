@@ -1,0 +1,124 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to Rocco",
+        "description": "Enter the email address you use with the Rocco app. Rocco will email you a sign-in code.",
+        "data": {
+          "email": "Email"
+        }
+      },
+      "code": {
+        "title": "Enter your code",
+        "description": "Rocco sent a code to {email}.",
+        "data": {
+          "code": "Code"
+        }
+      }
+    },
+    "error": {
+      "unknown_email": "No Rocco account uses that email.",
+      "invalid_email": "That doesn't look like an email address.",
+      "invalid_code": "That code is incorrect.",
+      "code_expired": "That code has expired. Go back and request a new one.",
+      "cannot_sign_in": "Rocco didn't accept the sign-in.",
+      "cannot_connect": "Couldn't reach Rocco's servers."
+    },
+    "abort": {
+      "already_configured": "This Rocco account is already set up.",
+      "reauth_successful": "Signed back in.",
+      "unique_id_mismatch": "That email belongs to a different Rocco account."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "door": {
+        "name": "Door"
+      },
+      "door_lock": {
+        "name": "Door lock"
+      },
+      "firmware_update": {
+        "name": "Firmware update"
+      },
+      "compressor": {
+        "name": "Compressor"
+      }
+    },
+    "light": {
+      "light": {
+        "name": "Interior light"
+      }
+    },
+    "number": {
+      "upper_zone_setpoint": {
+        "name": "Upper zone temperature"
+      },
+      "lower_zone_setpoint": {
+        "name": "Lower zone temperature"
+      }
+    },
+    "select": {
+      "cooling_mode": {
+        "name": "Cooling mode",
+        "state": {
+          "smart": "Smart",
+          "party": "Party",
+          "holiday": "Holiday"
+        }
+      }
+    },
+    "sensor": {
+      "items": {
+        "name": "Items"
+      },
+      "rack_items": {
+        "name": "Rack {rack} items"
+      },
+      "alert": {
+        "name": "Alert"
+      },
+      "upper_zone_temperature": {
+        "name": "Upper zone current temperature"
+      },
+      "lower_zone_temperature": {
+        "name": "Lower zone current temperature"
+      },
+      "ambient_temperature": {
+        "name": "Room temperature"
+      },
+      "evaporator_temperature": {
+        "name": "Evaporator temperature"
+      },
+      "wifi_signal": {
+        "name": "Wi-Fi signal"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Live updates",
+        "description": "Get live door, temperature and status updates. Try automatic setup first. If that doesn't work for your account, you can paste an ID from the Rocco app instead.",
+        "menu_options": {
+          "automatic": "Set up automatically",
+          "manual": "Paste an ID from the Rocco app"
+        }
+      },
+      "manual": {
+        "title": "Paste an ID from the Rocco app",
+        "description": "Capture the Rocco app with Proxyman (Network Extension mode), open the request to cognito-identity.us-east-1.amazonaws.com, and copy the IdentityId from its body. It looks like us-east-1:12345678-abcd-\u2026. Treat it like a password. Leave empty to turn live updates off.",
+        "data": {
+          "identity_id": "AWS identity ID"
+        }
+      }
+    },
+    "error": {
+      "automatic_failed": "Automatic setup couldn't reach Rocco's AWS service. Try pasting an ID instead.",
+      "automatic_unavailable": "Automatic setup isn't available for this account yet. Paste an ID from the Rocco app instead.",
+      "invalid_identity": "That doesn't look like an identity ID. It should look like us-east-1:12345678-abcd-\u2026.",
+      "identity_rejected": "Rocco's AWS service rejected that identity, or it can't see this fridge.",
+      "cannot_connect": "Couldn't reach Rocco's AWS service."
+    }
+  }
+}
